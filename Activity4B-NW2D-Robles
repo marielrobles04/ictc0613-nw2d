@@ -1,0 +1,58 @@
+package week04;
+import java.util.*;
+
+public class Activity4B{
+
+	public static void main(String[] args) {
+		
+		Scanner scan = new Scanner (System.in);
+		
+			int ar1, ar2, loc;
+		
+		System.out.println("Number of elements is: ") ;
+ 		ar2 = scan.nextInt();
+		int[] a = new int[ar2];
+ 
+    		System.out.println("Enter the numbers: ") ;
+    		for( ar1 = 0; ar1 <ar2; ar1++ )
+    		{
+        		a[ar1] = scan.nextInt();
+    		}
+		
+    		
+    	Scanner s = new Scanner (System.in);
+    	System.out.println("Press 1 if you will delete an array");
+    	System.out.println("Press 2 if not");
+    	
+    	int choice = s.nextInt();
+    	
+    	switch (choice) {
+    		case 1: System.out.println("Location of number to be deleted: ");
+     		loc = scan.nextInt();
+	   		
+    		for( ar1 = loc; ar1 <ar2-1; ar1++)
+    	    	{
+            		a[ar1]=a[ar1+1];
+        		}
+        			ar2 = ar2-1;
+        		
+        		for( ar1 = 0; ar1 < ar2; ar1++) 
+        		{
+            		System.out.println("a["+ar1+"] = "+a[ar1]);
+        		}
+        		break;
+    			case 2:	System.out.println("\n Elements of Array: \n");
+        		for( ar1 = 0; ar1 < ar2; ar1++) 
+        		{
+            		System.out.println("a["+ar1+"] = "+a[ar1]);
+        		}
+    			break;
+    			default: System.out.println("Invalid Choice");
+    			break;
+
+    	}
+    	
+		
+	}
+	
+}
